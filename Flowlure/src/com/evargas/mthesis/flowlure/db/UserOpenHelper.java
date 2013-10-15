@@ -19,21 +19,23 @@ public class UserOpenHelper extends SQLiteOpenHelper {
 	
 	@Override
 	public void onCreate(SQLiteDatabase db) {
-		// Create database and tables
+		// Create database tables
+		db.execSQL(UserQuery.CREATE_USER_TABLE);
 	}
 
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-		// TODO Auto-generated method stub
-
+		onCreate(db);
 	}
 
 	private abstract class UserQuery {
-		
 		public static final String CREATE_USER_TABLE = 
 				"CREATE TABLE " + UserEntry.TABLE_NAME + " (" +
 				UserEntry._ID + " INTEGER PRIMARY KEY," +
 				UserEntry.COLUMN_USERNAME + TEXT_TYPE + COMMA_SEP +
-				UserEntry.COLUMN_PASSWORD + TEXT_TYPE ;
+				UserEntry.COLUMN_PASSWORD + TEXT_TYPE +
+				")";
 	}
+	
+	
 }
