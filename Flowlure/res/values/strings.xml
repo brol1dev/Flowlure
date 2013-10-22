@@ -1,5 +1,8 @@
 <resources>
 
     <string name="app_name">Flowlure</string>
+    
+    <string name="input_username">Username</string>
+    <string name="input_password">Password</string>
 
 </resources>
